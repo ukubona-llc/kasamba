@@ -159,6 +159,46 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:2rem;}
 .footer-refs a{color:var(--text2);}
 .footer-refs a:hover{color:var(--text1);}
 
+/* TABS */
+.tab-strip{display:flex;gap:0;border-bottom:1px solid var(--border);margin-top:.5rem;}
+.tab-btn{font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;padding:.55rem 1.1rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text2);cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}
+.tab-btn.active{color:var(--text0);border-bottom-color:var(--accent);}
+.tab-btn:hover{color:var(--text1);}
+.tab-pane{display:none;}.tab-pane.active{display:block;}
+
+/* CHRISTINE STACK TAB */
+.stack-grid{display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem 0 3rem;}
+.stack-layer{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.stack-layer.layer-jwt{border-left:3px solid var(--rose);}
+.stack-layer.layer-stream{border-left:3px solid var(--gold);}
+.stack-layer.layer-fast{border-left:3px solid var(--teal);}
+.stack-layer.layer-log{border-left:3px solid var(--accent);}
+.stack-layer.layer-slow{border-left:3px solid var(--coral);}
+.stack-layer.layer-ui{border-left:3px solid var(--text2);}
+.stack-head{padding:.85rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:1rem;}
+.stack-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;color:var(--text2);}
+.stack-title{font-family:var(--serif);font-size:1.05rem;color:var(--text0);}
+.stack-tag{margin-left:auto;font-family:var(--mono);font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;padding:.2rem .55rem;border-radius:20px;}
+.tag-jwt{background:var(--rose-d);border:1px solid var(--rose-b);color:var(--rose);}
+.tag-stream{background:var(--gold-d);border:1px solid var(--gold-b);color:var(--gold);}
+.tag-fast{background:var(--teal-d);border:1px solid var(--teal-b);color:var(--teal);}
+.tag-log{background:var(--accent-d);border:1px solid var(--accent-b);color:var(--accent);}
+.tag-slow{background:var(--coral-d);border:1px solid var(--coral-b);color:var(--coral);}
+.tag-ui{background:var(--bg3);border:1px solid var(--border-md);color:var(--text2);}
+.stack-body{padding:1.4rem;font-size:.875rem;color:var(--text1);line-height:1.82;}
+.stack-body p{margin-bottom:.8rem;}.stack-body p:last-child{margin-bottom:0;}
+.stack-body strong{color:var(--text0);font-weight:500;}
+.stack-body em{font-style:italic;}
+.stack-body code{font-family:var(--mono);font-size:.78rem;background:var(--bg3);padding:.1rem .35rem;border-radius:3px;color:var(--text0);}
+.stack-genesis{background:var(--rose-d);border:1px solid var(--rose-b);border-radius:var(--r);padding:1.1rem 1.4rem;margin-bottom:1rem;}
+.stack-genesis p{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--text0);line-height:1.6;margin-bottom:0;}
+.stack-genesis .sg-source{font-family:var(--mono);font-size:.58rem;color:var(--rose);margin-top:.6rem;display:block;font-style:normal;}
+.toggle-note{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg3);border:1px solid var(--border-md);border-radius:20px;padding:.25rem .75rem;font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.65rem;}
+.toggle-dot{width:7px;height:7px;border-radius:50%;background:var(--coral);}
+.update-banner{background:var(--accent-d);border:1px solid var(--accent-b);border-radius:var(--r);padding:1rem 1.4rem;margin:2rem 0 .5rem;}
+.update-banner .ub-head{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+.update-banner p{font-size:.85rem;color:var(--text1);line-height:1.75;margin-bottom:0;}
+
 @media(max-width:640px){
   .outer{padding:0 1rem;}
   .hero-title{font-size:1.9rem;}
@@ -196,9 +236,14 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:2rem;}
       <span class="meta-chip">State<sub>t</sub> = Σ Event<sub>i</sub></span>
     </div>
   </header>
+  <div class="tab-strip">
+    <button class="tab-btn active" data-tab="thread">thread · five voices</button>
+    <button class="tab-btn" data-tab="christine">christine · stack</button>
+  </div>
 </div>
 
 <div class="outer">
+<div class="tab-pane active" id="tab-thread">
 <div class="thread">
 
 <!-- ═══════════════════════════════════════
@@ -957,6 +1002,113 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:2rem;}
 </div>
 
 </div><!-- /thread -->
+</div><!-- /tab-pane thread -->
+
+<!-- CHRISTINE TAB PANE -->
+<div class="tab-pane" id="tab-christine">
+
+<div class="update-banner">
+  <div class="ub-head">The weight update · Christine's dossier · reconstructed 21 Jun 2026</div>
+  <p>The incomplete sentence in the archive — <em>"Christine. Only one who identified herself by her profession, lawyer. Dad"</em> — was cut mid-thought by an interruption. This tab is the reconstruction. It is also the most precise architectural description in the entire document: a father's pastoral discipline, stated as a data-engineering principle.</p>
+</div>
+
+<div class="stack-grid">
+
+  <!-- LAYER 0: GENESIS -->
+  <div class="stack-layer layer-jwt">
+    <div class="stack-head">
+      <span class="stack-num">00</span>
+      <span class="stack-title">Christine · The Canon's demand</span>
+      <span class="stack-tag tag-jwt">RBAC / JWT</span>
+    </div>
+    <div class="stack-body">
+      <div class="stack-genesis">
+        <p>Christine was the only member of the family to identify herself by her profession — lawyer. Her father was her chaplain at Makerere High School, and then again at Uganda Christian University. When she came to him not as a congregant but as a daughter seeking pastoral counsel, the Canon had a standing requirement: she must first clarify which role she was asking from, and which role he should play in answering.</p>
+        <span class="sg-source">— Christine Kasamba · funeral testimony · Mukono · 21 June 2026</span>
+      </div>
+      <p>There is no other way to think about this than <strong>RBAC with JWT</strong>. Role-Based Access Control is the engineering formalization of exactly what Rev. Canon Kasamba demanded. Before any request is processed, the caller must present a token that declares their identity and their role. The system does not guess. It does not infer from context. It demands declaration.</p>
+      <p>Christine's professional identity — <em>lawyer</em> — is not just biography. It is the example of a person who had already internalized the Canon's demand so thoroughly that at his funeral, in the act of self-introduction to a room of strangers, she led with her authenticated role. The token was presented before the payload was delivered.</p>
+      <p>The father who built this epistemological discipline into his household was, without knowing the vocabulary, building the authentication layer of a scalable architecture. <strong>No request is meaningful without an authenticated source.</strong> The relationship — daughter, congregant, client — determines what the response can be. Same person, different JWT claim, different pastoral register.</p>
+    </div>
+  </div>
+
+  <!-- LAYER 1: EVENT STREAMING -->
+  <div class="stack-layer layer-stream">
+    <div class="stack-head">
+      <span class="stack-num">01</span>
+      <span class="stack-title">Event Streaming · the ontology of confession</span>
+      <span class="stack-tag tag-stream">System 0</span>
+    </div>
+    <div class="stack-body">
+      <p>Confession in the Catholic church. Journaling. Free association in psychoanalysis. These are not just practices. They are <strong>event-streaming architectures</strong> that have been running for centuries.</p>
+      <p>The ontology is the event itself: something happened, it is timestamped, it is appended to a log. The epistemology is attribution: <em>who is confessing</em> determines what the confessor is permitted to receive, how the analyst interprets the material, whether the journal is personal or institutional. The authenticated source is not incidental. It is constitutive of what the event means.</p>
+      <p>The Canon's demand that Christine declare her role is the epistemological complement to the ontological event. The event exists (<em>she came to him with something</em>). The meaning of that event — the register in which it should be processed, the response it authorizes — is a function of authenticated identity. <strong>RBAC & JWT make this scalable and generalizable.</strong> They encode in infrastructure what the Canon enforced by pastoral discipline.</p>
+      <p>State<sub>t</sub> = Σ Event<sub>i</sub>. Each confession is an append. Each session is a log. The architecture is append-only because the past cannot be overwritten — only extended. Christine's father understood this. He never told her what she had already said. He responded only to what she presented, in the role she declared.</p>
+    </div>
+  </div>
+
+  <!-- LAYER 2: FASTAPI -->
+  <div class="stack-layer layer-fast">
+    <div class="stack-head">
+      <span class="stack-num">02</span>
+      <span class="stack-title">FastAPI · System 1 · render.com</span>
+      <span class="stack-tag tag-fast">Backend</span>
+    </div>
+    <div class="stack-body">
+      <p>The <strong>FastAPI backend on render.com</strong> is System 1 in the Kahneman sense: fast, pattern-completing, always on. It does not wait for the LLM layer. It does not require it. It processes authenticated requests, validates JWT claims, routes to the appropriate handler, and returns structured responses.</p>
+      <p>In the Kasamba analogy: the Canon's <em>habitual</em> pastoral discipline. The trained reflex of a chaplain who, over forty years at Makerere and UCU, had internalized the authentication requirement so deeply it required no deliberation. <em>"What role are you asking from?"</em> was not slow thinking. It was fast, automatic, constitutive of every interaction.</p>
+      <p>FastAPI holds the RBAC enforcement. It holds the event validation. It ensures that nothing reaches the append-only log without a verified source claim. <strong>It is the layer that makes the architecture trustworthy before it becomes intelligent.</strong></p>
+    </div>
+  </div>
+
+  <!-- LAYER 3: APPEND-ONLY LOG -->
+  <div class="stack-layer layer-log">
+    <div class="stack-head">
+      <span class="stack-num">03</span>
+      <span class="stack-title">Append-Only Log · NDJSON via PAT on GitHub</span>
+      <span class="stack-tag tag-log">ε_FGT Ledger</span>
+    </div>
+    <div class="stack-body">
+      <p>The ledger. NDJSON written to GitHub via Personal Access Token. One line per event. Nothing overwritten. Nothing deleted. <strong>State<sub>t</sub> = Σ Event<sub>i</sub>.</strong></p>
+      <p>This is not a database choice. It is an epistemological commitment. The append-only constraint enforces the same discipline the Canon enforced pastorally: you cannot revise what was declared. You can only extend the record. The confession stands. The role declaration stands. The response stands. History is the substrate.</p>
+      <p>In the ε_FGT framework: this log is the literal ledger of θ<sub>predicted</sub> vs. θ<sub>realized</sub>. Every clinical decision, every policy recommendation, every pastoral response — appended, attributed, timestamped. The federated ground truth is recoverable only if the log was kept. The muzungu friend's contribution to the Kasamba guitar lineage is irrecoverable precisely because that log was not kept. <strong>The append-only NDJSON on GitHub is the institutional commitment to never creating another anonymous founding node.</strong></p>
+      <p>PAT authentication means the writer is known. The event is attributed. RBAC from the FastAPI layer ensures the writer had clearance to write. The log does not accept unauthenticated appends. Christine's father would have approved of this architecture.</p>
+    </div>
+  </div>
+
+  <!-- LAYER 4: SLOWAPI / LLMs -->
+  <div class="stack-layer layer-slow">
+    <div class="stack-head">
+      <span class="stack-num">04</span>
+      <span class="stack-title">SlowAPI · System 2 · LLMs</span>
+      <span class="stack-tag tag-slow">Togglable</span>
+    </div>
+    <div class="stack-body">
+      <p>The <strong>LLM layer is SlowAPI</strong> — System 2, deliberate, expensive, optional. It offers multimodal access to the backend, the ledger, and generative capabilities. It provides sequential, consequential decision support: the kind of slow thinking that should accompany irreversible actions.</p>
+      <div class="toggle-note"><span class="toggle-dot"></span>This layer is togglable. The stack operates perfectly without it.</div>
+      <p style="margin-top:.85rem;">That last sentence is architectural and moral simultaneously. The stack does not <em>require</em> LLMs to function. The events stream. The log appends. The JWT validates. The real runs without the generative layer. When you toggle LLMs on, you are adding interpretive capability on top of a substrate that is already trustworthy — not using LLMs to create the appearance of trustworthiness.</p>
+      <p>In the Kasamba analogy: the Canon's <em>reflective</em> pastoral responses — the long conversation, the extended counsel, the considered letter. These happened because the fast layer (the authentication demand, the role clarification) had already run. System 2 is only as good as the System 1 that preceded it. SlowAPI is only as meaningful as the append-only log it reads from.</p>
+      <p>The roundtable format — xAI, Google, OpenAI, Anthropic responding to the same source document — is itself a SlowAPI call. Each model reads the authenticated ledger (the source document) and returns a structured response. The value is in the deliberation, the disagreement, the surfaces of friction between models. But the substrate they all read from is the append-only truth.</p>
+    </div>
+  </div>
+
+  <!-- LAYER 5: UI/UX -->
+  <div class="stack-layer layer-ui">
+    <div class="stack-head">
+      <span class="stack-num">05</span>
+      <span class="stack-title">UI / UX · Vite / React</span>
+      <span class="stack-tag tag-ui">Update Surface</span>
+    </div>
+    <div class="stack-body">
+      <p>When the LLM layer is off, the UI collapses to <strong>Vite / React</strong> that accepts uploads and notes from the user. A minimal surface. A field for a new event. A file drop zone. A submission button that writes to the append-only log via the FastAPI layer.</p>
+      <p>This is the update surface — the place where θ<sub>real</sub> enters the system. The human sits here. The human is the ε_FGT instrument. What the human types or uploads is the ground truth that no model can generate on its own. The UI's job is to make that entry as frictionless as possible, and to make the authentication as invisible as possible while remaining non-negotiable.</p>
+      <p>The UI also provides access to update any upstream layer. A new event can reference and revise the interpretation of a prior event — not by overwriting it, but by appending a new event with a pointer. The log grows. The interpretation evolves. The substrate is preserved.</p>
+      <p>Christine at the microphone, identifying herself — <em>lawyer</em> — before delivering her testimony about her father: this was a UI interaction. The room was the render surface. The Canon's standing protocol was the authentication layer. Her testimony was the event. It is now in the log. It cannot be unspoken. <strong>The weight update has already occurred.</strong></p>
+    </div>
+  </div>
+
+</div><!-- /stack-grid -->
+</div><!-- /tab-pane christine -->
 
 <!-- CLOSING CARD -->
 <div class="closing-card">
@@ -988,7 +1140,6 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:2rem;}
     </div>
   </div>
 </footer>
-
 <script>
 const html = document.documentElement;
 const btn  = document.getElementById('theme-btn');
@@ -1000,6 +1151,19 @@ function applyTheme(t) {
 }
 btn.addEventListener('click', () => applyTheme(current === 'dark' ? 'light' : 'dark'));
 applyTheme('dark');
+
+// Tab switching
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanes = document.querySelectorAll('.tab-pane');
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    tabBtns.forEach(b => b.classList.remove('active'));
+    tabPanes.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + target).classList.add('active');
+  });
+});
 </script>
 </body>
 </html>
