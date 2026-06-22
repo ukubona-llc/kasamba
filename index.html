@@ -1022,11 +1022,22 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:2rem;}
       <span class="stack-tag tag-jwt">RBAC / JWT</span>
     </div>
     <div class="stack-body">
+      <div class="stack-genesis" style="border-color:var(--gold-b);background:var(--gold-d);margin-bottom:.85rem;">
+        <p>Before the father's demand, there was the mother's. From childhood, Christine's mother taught her to read the Bible — and only the King James Version. No paraphrase. No gloss. The authorized text, in its authorized form, read directly.</p>
+        <span class="sg-source">Layer −1 · the mother's discipline · primary corpus · KJV only</span>
+      </div>
+
+      <div class="stack-genesis" style="border-color:var(--coral-b);background:var(--coral-d);margin-bottom:.85rem;">
+        <p>The father had a library — he was a professor, after all. His standing requirement before any pastoral counsel was this: exhaust the literature first. Come to him only after the books had been interrogated. The library was the prerequisite gate. The conversation with the father was the last resort, not the first.</p>
+        <span class="sg-source">Layer 0 · the library gate · literature-first protocol · prerequisite to counsel</span>
+      </div>
+
       <div class="stack-genesis">
         <p>Christine was the only member of the family to identify herself by her profession — lawyer. Her father was her chaplain at Makerere High School, and then again at Uganda Christian University. When she came to him not as a congregant but as a daughter seeking pastoral counsel, the Canon had a standing requirement: she must first clarify which role she was asking from, and which role he should play in answering.</p>
-        <span class="sg-source">— Christine Kasamba · funeral testimony · Mukono · 21 June 2026</span>
+        <span class="sg-source">Layer 0 · Christine Kasamba · funeral testimony · Mukono · 21 June 2026</span>
       </div>
-      <p>There is no other way to think about this than <strong>RBAC with JWT</strong>. Role-Based Access Control is the engineering formalization of exactly what Rev. Canon Kasamba demanded. Before any request is processed, the caller must present a token that declares their identity and their role. The system does not guess. It does not infer from context. It demands declaration.</p>
+      <p>The sequence matters. The mother's KJV discipline came first: a single authoritative source, no shortcuts, read in full. Then the father's library gate: literature before counsel, secondary sources before the primary. Only after both layers had been satisfied — corpus read, library interrogated — did the authentication demand become relevant. <strong>You could not present your JWT until you had earned the right to present it.</strong> The credential presupposed the work.</p>
+      <p>This is law school as it actually functions — and as Christine experienced it not as an institution's imposition but as a continuation of a formation that had been running since childhood. The KJV was the training corpus. The library was the RAG layer. The father's authentication demand was the access control. Law school did not build this architecture. It found it already operational.</p> Role-Based Access Control is the engineering formalization of exactly what Rev. Canon Kasamba demanded. Before any request is processed, the caller must present a token that declares their identity and their role. The system does not guess. It does not infer from context. It demands declaration.</p>
       <p>Christine's professional identity — <em>lawyer</em> — is not just biography. It is the example of a person who had already internalized the Canon's demand so thoroughly that at his funeral, in the act of self-introduction to a room of strangers, she led with her authenticated role. The token was presented before the payload was delivered.</p>
       <p>The father who built this epistemological discipline into his household was, without knowing the vocabulary, building the authentication layer of a scalable architecture. <strong>No request is meaningful without an authenticated source.</strong> The relationship — daughter, congregant, client — determines what the response can be. Same person, different JWT claim, different pastoral register.</p>
     </div>
